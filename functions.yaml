@@ -1,12 +1,13 @@
 - name: functions
   hosts: localhost
   CONNECTION: local
-  VARS:
-    COURSE: devops-practice
-      - name: devops
-      - duration: 2
-      -skill: intermediate
+  vars:
+    person: "John Doe,ramesh,suresh"
   tasks:
-    - name: create-functions
+    - name: create-functions-deployment
       ansible.builtin.debug:
-        msg: "Creating functions for {{ COURSE | dict2items }} with skill level {{ skill }} and duration {{ duration }} weeks."
+        msg: "Creating functions deployment"
+
+    -name: create a list of functions
+      ansible.builtin.debug:
+        msg: "hello {{ person.split(',') }}"     
