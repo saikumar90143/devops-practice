@@ -1,6 +1,6 @@
 - name: functions
-  hosts: localhost
-  CONNECTION: local
+  hosts: local
+  connection: local
   vars:
     person: "John Doe,ramesh,suresh"
   tasks:
