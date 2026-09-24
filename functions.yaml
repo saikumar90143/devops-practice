@@ -8,6 +8,6 @@
       ansible.builtin.debug:
         msg: "Creating functions deployment"
 
-    -name: create a list of functions
+    - name: create a list of functions
       ansible.builtin.debug:
         msg: "hello {{ person.split(',') }}"     
