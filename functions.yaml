@@ -11,3 +11,13 @@
     - name: create a list of functions
       ansible.builtin.debug:
         msg: "hello {{ person.split(',') }}"     
+
+    - name: create a map to list
+      vars:
+        course:
+          - name: "Ansible"
+            duration: "2 weeks"
+          - name: "Docker"
+            duration: "3 weeks"
+      ansible.builtin.debug:
+        msg: "hello {{ course | dict2items }}"    
