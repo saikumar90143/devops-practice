@@ -1,8 +1,23 @@
 - name: functions
   hosts: localhost
-  connection: localhost
+  connection: local
+
   vars:
     person: "John Doe,ramesh,suresh"
+
+    courses:
+      - name: Ansible
+        duration: 2 weeks
+
+      - name: Docker
+        duration: 3 weeks
+
+      - name: Kubernetes
+        duration: 4 weeks
+
+      - name: AWS
+        duration: 6 weeks
+
   tasks:
     - name: create-functions-deployment
       ansible.builtin.debug:
@@ -10,14 +25,8 @@
 
     - name: create a list of functions
       ansible.builtin.debug:
-        msg: "hello {{ person.split(',') }}"     
+        msg: "hello {{ person.split(',') }}"
 
-    - name: create a map to list
-      vars:
-       course:
-          name: Ansible
-          duration: 2 weeks
-          name: Docker
-          duration: 3 weeks
+    - name: display courses
       ansible.builtin.debug:
-        msg: "hello {{ course | dict2items }}"    
+        msg: "{{ courses }}"
