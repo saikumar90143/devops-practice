@@ -1,0 +1,12 @@
+- name: functions
+  hosts: localhost
+  CONNECTION: local
+  VARS:
+    COURSE: devops-practice
+      - name: devops
+      - duration: 2
+      -skill: intermediate
+  tasks:
+    - name: create-functions
+      ansible.builtin.debug:
+        msg: "Creating functions for {{ COURSE | dict2items }} with skill level {{ skill }} and duration {{ duration }} weeks."
